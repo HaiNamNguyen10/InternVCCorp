@@ -1,0 +1,2 @@
+module Exception_new {
+}
