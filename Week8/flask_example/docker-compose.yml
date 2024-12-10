@@ -1,0 +1,18 @@
+services:
+  container1:
+    image: busybox
+    command: sleep 3600
+    networks:
+      - network1
+      
+  container2:
+    image: busybox
+    ports:
+      - 8080:80
+    entrypoint: ["sh", "-c", "cd /var/www && httpd"]
+    networks:
+      - network1
+
+networks:
+  network1:
+    driver: bridge
